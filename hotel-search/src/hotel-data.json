@@ -6,11 +6,11 @@
   },
   {
     "name": "hoteltwo",
-    "starRating": 3,
+    "starRating": 2,
     "facilities": ["car park", "gym"]
   },
   {
-    "name": "hotelthree",
+    "name": "ahotel",
     "starRating": 3,
     "facilities": []
   }

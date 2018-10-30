@@ -1,0 +1,9 @@
+import {assert} from 'chai';
+import Actions from '../src/actions/store-actions';
+import HotelStore from '../src/stores/hotel-store';
+import ActionConstants from '../src/constants/action-constants';
+import Hotel from '../src/components/App'
+describe('Hotel', function () {
+
+
+});

@@ -30,3 +30,21 @@
     transform: rotate(360deg);
   }
 }
+.hotel-container{
+  display:flex;
+  align-items:center;
+  flex-direction: column;
+}
+.hotel-card{
+  flex:1;
+  position: relative;
+  margin: 0 6px 6px;
+  padding: 10px;
+  list-style-type: none;
+}
+.card{
+  background: #ccc;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+

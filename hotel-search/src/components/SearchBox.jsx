@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import SearchBox from 'react-search-box';
+import HotelActions from '../actions/store-actions';
+import Hotel from "./Hotel";
 
 export default class Search extends Component {
     constructor() {
@@ -8,17 +10,12 @@ export default class Search extends Component {
     }
 
     componentWillMount() {
-        console.log('mounting',this.props.data)
         this.setState({data:this.props.data})
     }
 
     handleChange = (selection) => {
         console.log(selection)
-    };
-    sortByRating =(selection)=>{
-        selection.sort((a,b)=>{
-            return a.rating - b.rating;
-        })
+        HotelActions.getHotel(selection);
     };
     render() {
         console.log(this.state);
