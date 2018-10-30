@@ -1,28 +1,40 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from '../assets/logo.svg';
 import '../css/App.css';
+import HotelData from '../hotel-data'
+import SearchBox from './SearchBox';
+import Hotel from './Hotel';
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor() {
+        super();
+
+    }
+
+    mapHotels = () => {
+        return HotelData.map((hotel,idx) => {
+            return <Hotel key={idx} data={hotel}></Hotel>
+        })
+    };
+    searchChangeHandler =(val) =>{
+        val ? console.log(val.name) : console.log('reverted')
+    };
+    render() {
+        let hotels = this.mapHotels();
+        return (
+            <div className="instantSearch">
+                <div className="filters-bar">
+                    <FilterBar></FilterBar>
+                </div>
+                <div>
+                    <SearchBox data={HotelData} />
+                    {hotels}
+                </div>
+
+            </div>
+        );
+    }
 }
 
 export default App;
